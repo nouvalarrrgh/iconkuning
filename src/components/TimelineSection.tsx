@@ -1,10 +1,20 @@
-import React from 'react';
-import './TimelineSection.css';
+import SectionTitle from './SectionTitle';
 
 const TimelineSection: React.FC = () => {
   return (
     <section id="timeline" className="timeline-section">
-      <h2 className="section-title">TIMELINE QUEST</h2>
+      <SectionTitle text="TIMELINE QUEST" type="blue" />
+
+      <div className="section-intro-container">
+        <div className="pixel-card alert-card">
+          <div className="card-header">QUEST_GUIDE.HLP</div>
+          <div className="card-body">
+            <p className="intro-text">
+              Pantau setiap tahapan penting perjalananmu di ICON 2026. Jangan sampai melewatkan deadline level-up timmu!
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="timeline-container">
 

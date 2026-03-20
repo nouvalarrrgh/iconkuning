@@ -1,0 +1,40 @@
+/* Pastikan font 04b sudah di-import di proyekmu. 
+   Jika belum ada file-nya, sementara akan menggunakan font pixel cadangan */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Jarak aman agar bayangan tidak terpotong */
+}
+
+.text-wrapper {
+  /* Dimensi dari spesifikasimu */
+  width: 138.527px;
+  height: 125.519px;
+  
+  /* Pewarnaan dan Font */
+  color: #16A514;
+  font-family: '04b', 'Press Start 2P', cursive;
+  font-size: 147.714px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 5.909px;
+  
+  /* Garis Tepi (Outline) Putih */
+  -webkit-text-stroke-width: 4.66px;
+  -webkit-text-stroke-color: #FFF;
+  
+  /* Bayangan 3D (Hijau Gelap) dan Drop Shadow (Hitam transparan) */
+  text-shadow: 
+    3.993px 5.324px 0.665px #11860F, 
+    6.654px 7.32px 0.665px rgba(0, 0, 0, 0.47);
+
+  /* Penyesuaian tata letak agar teks berada tepat di tengah kotaknya */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: lowercase; /* Memastikan huruf kecil sesuai gambar referensi */
+}

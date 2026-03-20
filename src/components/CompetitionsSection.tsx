@@ -1,10 +1,20 @@
-import React from 'react';
-import './CompetitionsSection.css';
+import SectionTitle from './SectionTitle';
 
 const CompetitionsSection: React.FC = () => {
   return (
     <section id="competitions" className="competitions-section">
-      <h2 className="section-title">KATEGORI KOMPETISI</h2>
+      <SectionTitle text="KATEGORI KOMPETISI" type="green" />
+      
+      <div className="section-intro-container">
+        <div className="pixel-card alert-card">
+          <div className="card-header">MISSION_LOG.TXT</div>
+          <div className="card-body">
+            <p className="intro-text">
+              Pilih tantanganmu dan buktikan kemampuanmu di kancah nasional. Setiap kategori dirancang untuk menguji batas inovasi dan kreativitasmu!
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="competition-grid">
         {/* Kartu 1: Mobile Legends */}

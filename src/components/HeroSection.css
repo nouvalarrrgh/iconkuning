@@ -1,13 +1,85 @@
-.hero-section {
-  min-height: 100vh;
+.hero-section-with-floor {
+  position: relative; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  perspective: 1000px;
+  width: 100%;
+}
+
+.hero-floor-grid-3d {
+  position: absolute; bottom: -30%; left: 0; width: 100%; height: 120%; z-index: 10; pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+  background-size: 60px 60px; background-position: center bottom; box-shadow: inset 0 0 50px rgba(255,255,255,0.2); 
+  transform-origin: center bottom; transform: rotateX(65deg) scale(2.8) translateZ(0); 
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 65%); mask-image: linear-gradient(to top, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 65%);
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
-  /* Jarak untuk navbar */
-  position: relative;
-  z-index: 10;
+  padding-top: 80px; /* Jarak untuk Fixed Navbar */
 }
 
-/* ... (pindahkan CSS untuk .main-year, .main-title, .donut-group, .cta-button dari App.css sebelumnya ke sini agar rapi) ... */
+/* Teks Tahun Kecil 3D (Indigo) */
+.main-year-small {
+    position: relative;
+    font-size: 24px;
+    margin-bottom: 5px;
+    height: 30px;
+}
+.main-year-small .layer { position: absolute; top: 0; left: 50%; transform: translateX(-50%); color: #3c3293;} /* Warna Indigo */
+.main-year-small .shadow-deep {
+    color: #261f5c; /* Ungu tua */
+    text-shadow: 1px 1px 0 #261f5c, 2px 2px 0 #261f5c;
+}
+
+/* Penempatan Judul Utama SUPER-TEBAL */
+.main-title-3d-advanced { display: flex; flex-direction: column; align-items: center; margin-bottom: 25px; }
+.offset-down-1 { transform: translateY(-5px); }
+.offset-down-2 { transform: translateY(-10px); }
+
+/* --- Donut Tengah --- */
+.central-element-3d {
+  position: relative; width: 200px; height: 100px;
+  display: flex; justify-content: center; align-items: center; margin-bottom: 30px;
+}
+.donut-group-thick { position: relative; width: 100%; height: 100%; perspective: 1000px; }
+.donut-segment {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 50%; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); transform: rotateX(60deg);
+}
+.thick-green { background: linear-gradient(to right, #4caf50 0%, #aed581 100%); clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
+.thick-blue { background: linear-gradient(to right, #2196f3 0%, #81d4fa 100%); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); }
+
+.floating-text-group { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;}
+.icon-lab-text-3d {
+    font-size: 14px; color: white;
+    text-shadow: 0 0 10px white, 0 0 20px #4caf50;
+}
+
+
+/* Sparkles Terbang Independen */
+.flying-sparkle {
+  position: absolute; width: 5px; height: 5px; background: white; border-radius: 50%;
+  animation: sparkle-float 3s infinite linear;
+  box-shadow: 0 0 10px white, 0 0 20px yellow;
+}
+.s1 { top: 10%; left: 10%; animation-delay: 0.5s; }
+.s2 { bottom: 20%; right: 15%; animation-delay: 1s; }
+.s3 { top: 70%; left: 80%; }
+@keyframes sparkle-float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+}
+
+/* --- Jendela OS --- */
+.registration-section-3d { text-align: center; margin-bottom: 20px; }
+.sub-header-text-deep { font-size: 10px; color: #0d47a1; margin-bottom: 10px;}
