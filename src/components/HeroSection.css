@@ -1,0 +1,13 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  /* Jarak untuk navbar */
+  position: relative;
+  z-index: 10;
+}
+
+/* ... (pindahkan CSS untuk .main-year, .main-title, .donut-group, .cta-button dari App.css sebelumnya ke sini agar rapi) ... */

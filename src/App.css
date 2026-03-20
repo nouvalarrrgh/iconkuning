@@ -1,0 +1,181 @@
+/* --- Latar Belakang Kompleks & Perspective Grid --- */
+.landing-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* Latar belakang radial gradasi emas intens */
+  background: radial-gradient(circle at center top, #ffd54f 0%, #ffb300 100%);
+  background-attachment: fixed; /* Penting untuk mempertahankan posisi pendaran */
+  display: flex;
+  flex-direction: column;
+  perspective: 1000px; /* Perspektif global */
+  font-family: 'Press Start 2P', cursive;
+}
+
+.background-layers {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;
+}
+
+/* Perspective Grid yang LEBIH TEGAS & TERANG */
+.perspective-grid-bold {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform-origin: center bottom;
+  transform: rotateX(60deg) translateZ(0); /* Efek perspektif */
+  opacity: 0.9;
+}
+
+/* Pendaran Cahaya Global di Sekitar Donut (Seperti Lens Flare) */
+.global-pendaran {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%; height: 120%;
+  background:
+    radial-gradient(circle at center, rgba(130, 255, 160, 0.4) 0%, transparent 40%), /* Aura Hijau donut */
+    radial-gradient(circle at center, rgba(100, 150, 255, 0.4) 0%, transparent 35%); /* Aura Biru donut */
+}
+
+/* Sparkles Intens di Sekitar Donut */
+.stars-layer-intensified {
+    position: absolute;
+    top: -20%; left: -20%; width: 140%; height: 140%;
+    /* Pendaran cahaya tambahan dan sparkles acak */
+    background:
+        radial-gradient(circle at 75% 15%, rgba(255, 255, 255, 0.2) 0%, transparent 20%),
+        radial-gradient(circle at 25% 65%, rgba(255, 255, 255, 0.2) 0%, transparent 20%);
+}
+
+/* --- Navigasi Retro Terstruktur (Beige) --- */
+.retro-navbar {
+  position: fixed; top: 0; left: 0; width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  background-color: #f7e6b0; /* Warna kuning beige */
+  padding: 15px 30px;
+  border-bottom: 4px solid #fff; /* Tepi putih */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.nav-logo-group { display: flex; align-items: center; gap: 10px; }
+.logo-placeholder { font-size: 10px; color: #555; text-shadow: 1px 1px 0 #fff; }
+.logo-placeholder.sub { color: #888; text-shadow: 1px 1px 0 #fff; }
+.logo-divider { color: #ccc; font-family: monospace; }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { font-size: 10px; color: #333; text-decoration: none; text-transform: uppercase; }
+.daftar-link { border: 2px solid #555; padding: 5px 10px; background-color: #ffd54f;}
+
+/* --- Konten Utama & Donut --- */
+.main-content {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; position: relative; z-index: 3; margin-top: 60px; /* Jarak untuk navbar */
+}
+
+/* Teks Tahun Kecil 3D */
+.main-year-small { position: relative; font-size: 16px; margin-bottom: 10px; }
+.main-year-small .layer { position: absolute; top: 0; left: 0; color: #555;}
+.main-year-small .shadow-deep {
+    color: #4a148c; /* Ungu tua */
+    text-shadow: 1px 1px 0 #4a148c, 2px 2px 0 #4a148c;
+}
+
+/* Penempatan Judul Utama SUPER-TEBAL */
+.main-title-3d-advanced { display: flex; flex-direction: column; align-items: center; margin-bottom: 15px; }
+.offset-down-1 { transform: translateY(-8px); }
+.offset-down-2 { transform: translateY(-16px); }
+
+/* --- Donut Tengah Tebal & Sparkles --- */
+.central-element-3d {
+  position: relative; width: 200px; height: 100px;
+  display: flex; justify-content: center; align-items: center; margin-bottom: 30px;
+}
+.donut-group-thick { position: relative; width: 100%; height: 100%; perspective: 1000px; }
+.donut-segment {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 50%; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); transform: rotateX(60deg);
+}
+.thick-green { background: linear-gradient(to right, #4caf50 0%, #aed581 100%); clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
+.thick-blue { background: linear-gradient(to right, #2196f3 0%, #81d4fa 100%); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); }
+
+.floating-text-group { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;}
+.icon-lab-text-3d {
+    font-size: 14px; color: white;
+    /* Pendaran pendaran */
+    text-shadow: 0 0 10px white, 0 0 20px #4caf50;
+}
+
+/* Sparkles Terbang Independen */
+.flying-sparkle {
+  position: absolute; width: 5px; height: 5px; background: white; border-radius: 50%;
+  animation: sparkle-float 3s infinite linear;
+  box-shadow: 0 0 10px white, 0 0 20px yellow;
+}
+.s1 { top: 10%; left: 10%; animation-delay: 0.5s; }
+.s2 { bottom: 20%; right: 15%; animation-delay: 1s; }
+.s3 { top: 70%; left: 80%; }
+@keyframes sparkle-float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+}
+
+/* --- Pendaftaran & Jendela OS --- */
+.registration-section-3d { text-align: center; margin-bottom: 20px; }
+.sub-header-text-deep { font-size: 10px; color: #0d47a1; margin-bottom: 10px;}
+
+/* Tombol multi-colored 3D kompleks */
+.cta-button-3d-multi {
+  position: relative; background: none; border: none; padding: 0; cursor: pointer;
+}
+.cta-button-3d-multi .btn-layer {
+  position: absolute; top: 0; left: 0; font-size: 14px; text-transform: uppercase;
+  background: linear-gradient(to right, #4caf50, #ff7043, #2196f3); /* Rainbow gradient fill */
+  WebkitBackgroundClip: 'text'; WebkitTextFillColor: 'transparent'; /* Gradient text */
+}
+.cta-button-3d-multi .shadow-btn {
+    color: #4a148c; /* Ungu tua */
+    text-shadow:
+        1px 1px 0 #4a148c, 2px 2px 0 #4a148c, 3px 3px 0 #4a148c,
+        0 0 10px rgba(255, 100, 255, 0.4);
+    z-index: 1;
+}
+.cta-button-3d-multi .main-btn {
+    z-index: 2; border: 4px solid #fff; border-radius: 20px; padding: 10px 30px; color: white;
+}
+
+/* Jendela Jendela OS di Bawah (Timeline) */
+.os-window-timeline-deep {
+    position: relative; width: 300px; height: 150px; background: #ddd;
+    border: 3px solid #333; box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+.window-header-deep { background-color: #aaa; padding: 5px 10px; border-bottom: 3px solid #333; display: flex; justify-content: space-between; }
+.window-title-deep { font-size: 10px; color: white; }
+.window-controls-deep { font-size: 10px; color: #333;}
+.window-content-deep { padding: 10px; height: 100%; }
+
+/* Visual Timeline Sederhana di Gambar */
+.timeline-visualization-deep { display: flex; align-items: center; height: 100%;}
+.node-deep { width: 10px; height: 10px; border-radius: 50%; background: #555;}
+.node-deep.blue { background: #2196f3;}
+.node-deep.green { background: #4caf50;}
+.node-deep.red { background: #DF2B2B;}
+.line-deep { flex: 1; height: 1px; background: #fff; border: 1px solid #333;}
+
+/* --- Footer Navigasi Sederhana --- */
+.footer-nav-deep {
+  position: absolute; bottom: 0; width: 100%; display: flex; justify-content: center;
+  background-color: white; padding: 15px 0; gap: 20px; border-top: 4px solid #333; z-index: 10;
+}
+.footer-nav-deep a { font-size: 10px; color: #333; text-decoration: none; text-transform: uppercase;}
+
+/* --- Global CRT Scanline Overlay --- */
+.crt-overlay-global {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.05) 2px, rgba(0, 0, 0, 0.05) 4px);
+  pointer-events: none; z-index: 1000;
+}

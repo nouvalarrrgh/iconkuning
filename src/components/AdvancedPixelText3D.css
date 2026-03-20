@@ -1,0 +1,89 @@
+.advanced-pixel-text-3d {
+  display: inline-block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 32px; /* Sesuaikan ukuran sesuai kebutuhan */
+  line-height: 1;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.advanced-pixel-text-3d .text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.advanced-pixel-text-3d .text-layer.main-text {
+  z-index: 5; /* Di paling atas */
+}
+
+/* --- Lapisan Bayangan 3D Super Tebal (hadow-background) --- */
+.advanced-pixel-text-3d .text-layer.shadow-background::after {
+  content: attr(data-text);
+  color: #4a148c; /* Warna bayangan ungu tua */
+  z-index: 1; /* Paling bawah bayangan */
+  /* Tumpukan bayangan yang sangat padat untuk ketebalan 3D masif */
+  text-shadow:
+    1px 1px 0 #4a148c, 2px 2px 0 #4a148c, 3px 3px 0 #4a148c, 4px 4px 0 #4a148c, 5px 5px 0 #4a148c,
+    6px 6px 0 #4a148c, 7px 7px 0 #4a148c, 8px 8px 0 #4a148c, 9px 9px 0 #4a148c, 10px 10px 0 #4a148c,
+    11px 11px 0 #4a148c, 12px 12px 0 #4a148c, 13px 13px 0 #4a148c, 14px 14px 0 #4a148c, 15px 15px 0 #4a148c,
+    16px 16px 0 #4a148c;
+}
+
+/* Lapisan bayangan 3D kedua (biru tua) */
+.advanced-pixel-text-3d .text-layer.shadow-background::before {
+  content: attr(data-text);
+  color: #0d47a1; /* Biru tua */
+  z-index: 2; /* Di atas bayangan ungu */
+  top: 0px; left: 0px;
+  text-shadow:
+    -1px -1px 0 #0d47a1, -2px -2px 0 #0d47a1;
+}
+
+/* --- Lapisan Rainbow Aura di Belakang (bloom-background) --- */
+.advanced-pixel-text-3d .text-layer.bloom-background {
+  z-index: 0; /* Di belakang segalanya */
+}
+
+.advanced-pixel-text-3d .text-layer.bloom-background::before {
+  content: attr(data-text);
+  color: #ff7043; /* Warna aura dasar (seperti orange judul) */
+  /* Pendaran Cahaya (Bloom) yang Intens di belakang bayangan */
+  text-shadow:
+    0 0 10px rgba(255, 100, 255, 0.4), /* Pendaran ungu di luar */
+    0 0 20px rgba(100, 255, 255, 0.3), /* Pendaran cyan di luar */
+    0 0 30px rgba(255, 255, 255, 0.2); /* Pendaran putih di luar */
+  filter: blur(2px); /* Sedikit blur untuk pendaran cahaya */
+}
+
+/* --- Variasi Warna Gradient Utama dan Rainbow Aura berdasarkan Type --- */
+
+/* Orange Type */
+.advanced-pixel-text-3d.orange .main-text {
+  background: linear-gradient(180deg, #ffd54f 0%, #ff7043 100%);
+  WebkitBackgroundClip: text; WebkitTextFillColor: transparent;
+}
+.advanced-pixel-text-3d.orange .bloom-background::before {
+  color: #ff7043;
+}
+
+/* Blue Type */
+.advanced-pixel-text-3d.blue .main-text {
+  background: linear-gradient(180deg, #81d4fa 0%, #29b6f6 100%);
+  WebkitBackgroundClip: text; WebkitTextFillColor: transparent;
+}
+.advanced-pixel-text-3d.blue .bloom-background::before {
+  color: #29b6f6;
+  text-shadow: 0 0 10px #2196f3, 0 0 20px #90caf9;
+}
+
+/* Green Type */
+.advanced-pixel-text-3d.green .main-text {
+  background: linear-gradient(180deg, #aed581 0%, #4caf50 100%);
+  WebkitBackgroundClip: text; WebkitTextFillColor: transparent;
+}
+.advanced-pixel-text-3d.green .bloom-background::before {
+  color: #4caf50;
+  text-shadow: 0 0 10px #4caf50, 0 0 20px #aed581;
+}

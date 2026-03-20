@@ -1,0 +1,99 @@
+.competitions-section {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 0 #333, -1px -1px 0 #333;
+  margin-bottom: 50px;
+}
+
+.competition-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.pixel-card {
+  width: 300px;
+  background-color: #fff;
+  border: 4px solid #333;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  background-color: #ddd;
+  border-bottom: 4px solid #333;
+  padding: 5px 10px;
+  font-family: monospace;
+  font-weight: bold;
+  text-align: right;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-body h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: #555;
+}
+
+/* Warna berdasarkan repo */
+.card-green {
+  border-color: #16A514;
+}
+
+.card-green .card-header {
+  background-color: #16A514;
+  color: white;
+}
+
+.card-green h3 {
+  color: #16A514;
+}
+
+.card-blue {
+  border-color: #1F54B7;
+}
+
+.card-blue .card-header {
+  background-color: #1F54B7;
+  color: white;
+}
+
+.card-blue h3 {
+  color: #1F54B7;
+}
+
+.card-red {
+  border-color: #DF2B2B;
+}
+
+.card-red .card-header {
+  background-color: #DF2B2B;
+  color: white;
+}
+
+.card-red h3 {
+  color: #DF2B2B;
+}
